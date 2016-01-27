@@ -1,0 +1,660 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>前端开发之CSS背景 - My Octopress Blog</title>
+	<meta name="author" content="Mmyton">
+
+	
+	<meta name="description" content="前端开发之CSS背景 内容来源于网易微专业前端开发工程师课程以及W3CHTML CSS颜色值通常以下方式定义： 十六进制-如:&ldquo;#ff0000&rdquo; 或者 &ldquo;#f00&rdquo;
+RGB-如:&ldquo;rgb(255,0,0)&rdquo;
+颜色名称-如:& &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://mmyton.github.io/blog/2016/01/06/webcss/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+  function addBlankTargetForLinks () {
+    $('a[href^="http"]').each(function(){
+      $(this).attr('target', '_blank');
+    });
+  }
+  $(document).bind('DOMNodeInserted', function(event) {
+    addBlankTargetForLinks();
+  });
+</script>
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<!-- 
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='/images/mmyton.jpg' alt='Profile Picture' style='width: 160px;height:160px;' />");
+		});
+	</script>
+	 -->
+	<img src='/images/mmyton.jpg' alt='Profile Picture' style='width: 160px;height:160px;' />
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/">Blog</a></li>
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/about">About</a></li>
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:449166183@qq.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/Mmyton" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<div id="respWidth"><section>
+  <h1>Categories</h1>
+  <ul id="categories" style="list-style:none;">
+    <li class='category'><a href='/blog/categories/css/'>css (4)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (3)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/ps/'>ps (1)</a></li>
+
+  </ul>
+</section></div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">前端开发之CSS背景</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>内容来源于网易微专业前端开发工程师课程以及W3CHTML</p></blockquote>
+
+<h3>CSS颜色值通常以下方式定义：</h3>
+
+<ul>
+<li>十六进制-如:&ldquo;#ff0000&rdquo; 或者 &ldquo;#f00&rdquo;</li>
+<li>RGB-如:&ldquo;rgb(255,0,0)&rdquo;</li>
+<li>颜色名称-如:&ldquo;red&rdquo;</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h3><a href="">1.background-color</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-color：&lt;color&gt;
+默认值：transparent
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>&lt;color&gt;：指定颜色。
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1.设置或检索对象的背景颜色。
+2.当同时定义了背景颜色和背景图像时，背景图像覆盖在背景颜色之上。
+3.如果设置了background-image，同时也建议设置background-color用于当背景图像不可见时保持与文本一定的对比。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE6.0及以上支持
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="p">{</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span><span class="m">#F00</span><span class="p">;</span>  
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span><span class="m">#rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span><span class="m">#rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">);</span><span class="c">/*第四个参数为透明度*/</span>
+</span><span class='line'>  <span class="n">backrgound</span><span class="o">-</span><span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">backrgound</span><span class="o">-</span><span class="k">color</span><span class="o">:</span><span class="k">transparent</span><span class="p">;</span><span class="c">/*默认值*/</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3><a href="">2.background-image</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-image：&lt;bg-image&gt;[,&lt;bg-image&gt;]*
+&lt;bg-image&gt; = none|&lt;url&gt;|&lt;linear-gradient&gt;|&lt;radial-gradient&gt;|&lt;repeating-linear-gradient&gt;|&lt;repeating-radial-gradient&gt;
+默认值：none
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>none：无背景图。
+&lt;url&gt;：使用绝对或相对地址指定背景图像。
+&lt;linear-gradient&gt;：使用线性渐变创建背景图像。（CSS3）
+&lt;radial-gradient&gt;：使用径向(放射性)渐变创建背景图像。（CSS3）
+&lt;repeating-linear-gradient&gt;：使用重复的线性渐变创建背景图像。（CSS3）
+&lt;repeating-radial-gradient&gt;：使用重复的径向(放射性)渐变创建背景图像。（CSS3）
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1.设置或检索对象的背景图像。
+2.如果设置了background-image，同时也建议作者设置background-color用于当背景图像不可见时保持与文本一定的对比。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>1.IE8及更早浏览器不支持CSS3 background-image，即不支持多背景和使用渐变作为背景图像。
+2.IE9不支持CSS3新增参数值：&lt;linear-gradient&gt;|&lt;radial-gradient&gt;|&lt;repeating-linear-gradient&gt;|&lt;repeating-radial-gradient&gt;作为背景图像。
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/*2.background-image:&lt;bg-image&gt;[,&lt;bg-image&gt;]**/</span>
+</span><span class='line'><span class="c">/*&lt;bg-image&gt;=&lt;image&gt;|none*/</span>
+</span><span class='line'><span class="nt">div</span><span class="p">{</span>
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span><span class="sx">url(&quot;http://163.com/images/x.png&quot;)</span><span class="p">;</span> 
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span><span class="sx">url(&quot;/images/x.png&quot;)</span><span class="p">;</span>   
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span><span class="sx">url(&quot;../images/x.png&quot;)</span><span class="p">;</span><span class="c">/*单引号也可以*/</span>    
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span><span class="sx">url(&#39;../images/x.png&#39;)</span><span class="p">;</span> <span class="c">/*引号不写也可以*/</span>
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span><span class="sx">url(../images/x.png)</span><span class="p">;</span><span class="c">/*先写的图片在上层，后写在下层，若加背景色，背景色在最下面一层*/</span>
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span><span class="sx">url(red.png)</span><span class="o">,</span><span class="sx">url(blue.png)</span><span class="p">;</span>    
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4><a href="">linear-gradient()</a></h4>
+
+<h5>语法</h5>
+
+<pre><code>[[&lt;angle&gt;|to &lt;side-or-corner&gt;,]?&lt;color-stop&gt;[,&lt;color-stop&gt;]+
+&lt;side-or-corner&gt; = [left|right]|[top|bottom]
+&lt;color-stop&gt; = &lt;color&gt;[&lt;percentage&gt;|&lt;length&gt;]?
+</code></pre>
+
+<h5>示例代码</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span><span class="c">/*默认to bottom*/</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">to</span> <span class="nt">top</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">to</span> <span class="nt">right</span> <span class="nt">bottom</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">0deg</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">45deg</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">green</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span><span class="c">/*默认green从50%开始*/</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">green</span> <span class="nt">20</span><span class="o">%,</span><span class="nt">blue</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/19.jpg" width="100" height="100">  <img src="/images/20.jpg" width="100" height="100"> <img src="/images/21.jpg" width="100" height="100"> <img src="/images/22.jpg" width="100" height="100"> <img src="/images/23.jpg" width="100" height="100"> <img src="/images/24.jpg" width="100" height="100"> <img src="/images/25.jpg" width="100" height="100"></p>
+
+<h4><a href="">radial-gradient()</a></h4>
+
+<h5>语法</h5>
+
+<pre><code>[ [ circle || &lt;length&gt; ] [ at &lt;position&gt; ]? , | 
+[ ellipse || [ &lt;length&gt; | &lt;percentage&gt; ] {2} ] [ at  &lt;position&gt; ]? , |
+[ [ circle || ellipse ] | | &lt;extent-keyword&gt; ] [ at  &lt;position&gt; ]? , | at &lt;position&gt; , ] ? &lt;color-stop&gt; [ , &lt;color-stop&gt; ]+
+&lt; extent-keyword &gt; = closest-side | farthest-side | closest-corner | farthest-corner
+</code></pre>
+
+<h5>示例代码</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">closest-side</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">circle</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span><span class="c">/*椭圆和圆默认为farthest-corner*/</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">circle</span> <span class="nt">100px</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">100px</span> <span class="nt">50px</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">100px</span> <span class="nt">50px</span> <span class="nt">at</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">green</span> <span class="nt">20</span><span class="o">%,</span><span class="nt">blue</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/26.jpg" width="100" height="100"> <img src="/images/27.jpg" width="100" height="100"> <img src="/images/28.jpg" width="100" height="100"> <img src="/images/29.jpg" width="100" height="100"> <img src="/images/30.jpg" width="100" height="100"> <img src="/images/31.jpg" width="100" height="100"> <img src="/images/32.jpg" width="100" height="100"></p>
+
+<h4><a href="">repeating-linear-gradient()</a> &nbsp;&nbsp;<a href="">repeating-radial-gradient()</a></h4>
+
+<h5>示例代码</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background-image</span><span class="nd">:linear-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span> <span class="nt">20px</span><span class="o">,</span><span class="nt">red</span> <span class="nt">40px</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:repeating-linear-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span> <span class="nt">20px</span><span class="o">,</span><span class="nt">red</span> <span class="nt">40px</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span> <span class="nt">20px</span><span class="o">,</span><span class="nt">red</span> <span class="nt">40px</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">100px</span> <span class="nt">50px</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">100px</span> <span class="nt">50px</span> <span class="nt">at</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="nt">blue</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-image</span><span class="nd">:radial-gradient</span><span class="o">(</span><span class="nt">red</span><span class="o">,</span><span class="nt">green</span> <span class="nt">20</span><span class="o">%,</span><span class="nt">blue</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/33.jpg" width="100" height="100"> <img src="/images/34.jpg" width="100" height="100"> <img src="/images/35.jpg" width="100" height="100"> <img src="/images/36.jpg" width="100" height="100"></p>
+
+<h3><a href="">3.background-repeat</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-repeat：&lt;repeat-style&gt; [,&lt;repeat-style&gt;]*
+&lt;repeat-style&gt; = repeat-x | repeat-y | [repeat | space | round | no-repeat]{1,2}
+默认值：repeat
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>repeat-x：背景图像在横向上平铺
+repeat-y：背景图像在纵向上平铺
+repeat：背景图像在横向和纵向平铺
+no-repeat：背景图像不平铺
+round：背景图像自动缩放直到适应且填充满整个容器。（CSS3）
+space：背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1.设置或检索对象的背景图像如何铺排填充。必须先指定background-image属性。
+2.允许提供2个参数，如果提供全部2个参数，第1个用于横向，第二个用于纵向。
+3.如果只提供1个参数，则用于横向和纵向。特殊值repeat-x和repeat-y除外，因为repeat-x相当于repeat no-repeat，repeat-y相当于no-repeat repeat，即其实repeat-x和repeat-y等价于提供了2个参数值
+4.当引入多张图片时，background-repeat：&lt;repeat-style&gt; [,&lt;repeat-style&gt;]属性值以逗号隔开。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE8及更早浏览器不支持为background-repeat定义2个参数值；不支持CSS3新增参数值round|space。
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="p">{</span>
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&#39;red.png&#39;)</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-repeat</span><span class="o">:</span> <span class="k">repeat-x</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-repeat</span><span class="o">:</span> <span class="k">repeat-y</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-repeat</span><span class="o">:</span> <span class="n">space</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-repeat</span><span class="o">:</span> <span class="n">round</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3><a href="">4.background-attachment</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-attachment：&lt;attachment&gt; [ , &lt;attachment&gt; ]*
+&lt;attachment&gt; = fixed | local | scroll
+默认值：scroll
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>fixed：背景图像相对于窗体固定。
+scroll：背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。
+local：背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像也会跟着滚动，因为背景图像总是要跟着内容。（CSS3）
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>设置或检索背景图像是随对象内容滚动还是固定的。必须先指background-image属性
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE8及更早浏览器不支持CSS3新增参数值：local
+</code></pre>
+
+<h4>示例代码</h4>
+
+<h3><a href="">5.background-position</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-position：&lt;position&gt; [ , &lt;position&gt; ]*
+&lt;position&gt; = [ left | center | right | top | bottom | &lt;percentage&gt; | &lt;length&gt; ] | [ left | center | right | &lt;percentage&gt; | &lt;length&gt; ] [ top | center | bottom | &lt;percentage&gt; | &lt;length&gt; ] | [ center | [ left | right ] [ &lt;percentage&gt; | &lt;length&gt; ]? ] &amp;&amp; [ center | [ top | bottom ] [ &lt;percentage&gt; | &lt;length&gt; ]? ]
+默认值：0% 0%，效果等同于left top
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>&lt;percentage&gt;：用百分比指定背景图像填充的位置。可以为负值。
+&lt;length&gt;：用长度值指定背景图像填充的位置。可以为负值。
+center：背景图像横向和纵向居中。
+left：背景图像在横向上填充从左边开始。
+right：背景图像在横向上填充从右边开始。
+top：背景图像在纵向上填充从顶部开始。
+bottom：背景图像在纵向上填充从底部开始。
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1.设置或检索对象的背景图像位置。必须先指定background-image属性。
+2.该属性提供2个参数值。
+3.如果提供两个，第一个用于横坐标，第二个用于纵坐标。
+4.如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE8及更早浏览器不支持CSS3 Background-position定义多组位置，只支持单组。
+</code></pre>
+
+<h4>示例代码</h4>
+
+<h3><a href="">6.background-origin</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-origin：&lt;box&gt; [ , &lt;box&gt; ]*
+&lt;box&gt; = border-box | padding-box | content-box
+默认值：padding-box
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>padding-box：从padding区域（含padding）开始显示背景图像。
+border-box：从border区域（含border）开始显示背景图像。
+content-box：从content区域开始显示背景图像。
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>设置或检索对象的背景图像计算background-position时的参考原点(位置)。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE8及更早浏览器不支持
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="nt">red</span><span class="nc">.png</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-repeat</span><span class="nd">:no-repeat</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-origin</span><span class="nd">:padding-box</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-origin</span><span class="nd">:border-box</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-origin</span><span class="nd">:content-box</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/37.jpg" width="200" height="200"> <img src="/images/38.jpg" width="200" height="200"> <img src="/images/39.jpg" width="200" height="200"></p>
+
+<h3><a href="">6.background-clip</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-clip：&lt;box&gt; [ , &lt;box&gt; ]*
+&lt;box&gt; = border-box | padding-box | content-box | text
+默认值：border-box
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>padding-box：从padding区域（不含padding）开始向外裁剪背景。
+border-box：从border区域（不含border）开始向外裁剪背景。
+content-box：从content区域开始向外裁剪背景。
+text：从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果。
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>指定对象的背景图像向外裁剪的区域。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE8及更早浏览器不支持,IE9部分支持
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="nt">red</span><span class="nc">.png</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-clip</span><span class="nd">:border-box</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-clip</span><span class="nd">:padding-box</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-clip</span><span class="nd">:content-box</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/40.jpg" width="200" height="200"> <img src="/images/41.jpg" width="200" height="200"><br/>
+<img src="/images/42.jpg" width="200" height="200"> <img src="/images/43.jpg" width="200" height="200"></p>
+
+<h3><a href="">7.background-size</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background-size：&lt;bg-size&gt; [ , &lt;bg-size&gt; ]*
+&lt;bg-size&gt; = [ &lt;length&gt; | &lt;percentage&gt; | auto ]{1,2} | cover | contain
+默认值：auto
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>&lt;length&gt;：用长度值指定背景图像大小。不允许负值。
+&lt;percentage&gt;：用百分比指定背景图像大小。不允许负值。
+auto：背景图像的真实大小。
+cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1.检索或设置对象的背景图像的尺寸大小。
+2.该属性提供2个参数值(特性值cover和contain除外)。
+3.如果提供两个，第一个用于定义背景图像的宽度，第二个用于定义背景图像的高度。
+4.如果只提供一个，该值将用于定义背景图像的宽度，第2个值默认为auto，即高度为auto，此时背景图以提供的宽度作为参照来进行等比缩放。
+</code></pre>
+
+<h4>兼容性（主要考虑IE）</h4>
+
+<pre><code>IE8及更早浏览器不支持
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="nt">red</span><span class="nc">.png</span><span class="o">);</span>
+</span><span class='line'><span class="nt">background-repeat</span><span class="nd">:no-repeat</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-position</span><span class="nd">:50</span><span class="o">%</span> <span class="nt">50</span><span class="o">%;</span>
+</span><span class='line'><span class="nt">background-size</span><span class="nd">:auto</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-size</span><span class="nd">:20px</span> <span class="nt">20px</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-size</span><span class="nd">:50</span><span class="o">%</span> <span class="nt">50</span><span class="o">%;</span>
+</span><span class='line'><span class="nt">background-size</span><span class="nd">:cover</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background-size</span><span class="nd">:contain</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/44.jpg" width="100" height="100"> <img src="/images/45.jpg" width="100" height="100"> <img src="/images/46.jpg" width="100" height="100"> <img src="/images/47.jpg" width="100" height="100"> <img src="/images/48.jpg" width="100" height="100"></p>
+
+<h3><a href="">8.background</a></h3>
+
+<h4>语法</h4>
+
+<pre><code>background：[&lt;bg-layer&gt;,] *&lt;final-bg-layer&gt;
+&lt;bg-layer&gt; = &lt;bg-image&gt; || &lt;position&gt; [/&lt;bg-size&gt;]? || &lt;repeat-style&gt; || &lt;attachment&gt; ||&lt;box&gt; || &lt;box&gt;
+&lt;final-bg-layer&gt; = &lt;bg-layer&gt; || &lt;'background-color'&gt;
+</code></pre>
+
+<h4>示例代码</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">background</span><span class="nd">:url</span><span class="o">(</span><span class="nt">red</span><span class="nc">.png</span><span class="o">)</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">/</span><span class="nt">20px</span> <span class="nt">20px</span> <span class="nt">no-repeat</span><span class="o">;</span>
+</span><span class='line'><span class="nt">background</span><span class="nd">:url</span><span class="o">(</span><span class="nt">red</span><span class="nc">.png</span><span class="o">)</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">/</span><span class="nt">20px</span> <span class="nt">20px</span> <span class="nt">no-repeat</span><span class="o">,</span><span class="nt">url</span><span class="o">(</span><span class="nt">blue</span><span class="nc">.png</span><span class="o">)</span> <span class="nt">50</span><span class="o">%</span> <span class="nt">50</span><span class="o">%/</span><span class="nt">contain</span> <span class="nt">no-repeat</span> <span class="nt">content-box</span> <span class="nt">green</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/49.jpg" width="100" height="100"> <img src="/images/50.jpg" width="100" height="100"></p>
+</div>
+
+<br/><br/><br/>
+	
+		<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_linkedin">LinkedIn</a>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_tianya">天涯社区</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_fb">Facebook</a>
+
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	shortUrl:false,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+	
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2016/01/06/webcss" data-title="前端开发之CSS背景" data-url="http://mmyton.github.io/blog/2016/01/06/webcss/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"mmyton"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+
+
+				</div>
+
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    Mmyton
+
+
+Design credit: <a href="http://www.mmyton.com">Mmyton</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

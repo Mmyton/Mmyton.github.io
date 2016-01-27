@@ -1,0 +1,709 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>前端开发之CSS变形 - My Octopress Blog</title>
+	<meta name="author" content="Mmyton">
+
+	
+	<meta name="description" content="前端开发之CSS变形 内容来源于网易微专业前端开发工程师课程与个人总结 CSS3变形可以实现对文字或图像的旋转、缩放、倾斜、移动，分别对应Transform属性中的rotate、scale、skew、translate这个四个方法。四种变形的不同组合，就会产生不同的效果。
+注意： &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://mmyton.github.io/blog/2016/01/10/csstransition/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+  function addBlankTargetForLinks () {
+    $('a[href^="http"]').each(function(){
+      $(this).attr('target', '_blank');
+    });
+  }
+  $(document).bind('DOMNodeInserted', function(event) {
+    addBlankTargetForLinks();
+  });
+</script>
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<!-- 
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='/images/mmyton.jpg' alt='Profile Picture' style='width: 160px;height:160px;' />");
+		});
+	</script>
+	 -->
+	<img src='/images/mmyton.jpg' alt='Profile Picture' style='width: 160px;height:160px;' />
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/">Blog</a></li>
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/about">About</a></li>
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:449166183@qq.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/Mmyton" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<div id="respWidth"><section>
+  <h1>Categories</h1>
+  <ul id="categories" style="list-style:none;">
+    <li class='category'><a href='/blog/categories/css/'>css (4)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (3)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/ps/'>ps (1)</a></li>
+
+  </ul>
+</section></div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">前端开发之CSS变形</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>内容来源于网易微专业前端开发工程师课程与个人总结</p></blockquote>
+
+<p>CSS3变形可以实现对文字或图像的旋转、缩放、倾斜、移动，分别对应Transform属性中的rotate、scale、skew、translate这个四个方法。四种变形的不同组合，就会产生不同的效果。<br/>
+<strong>注意：</strong>这个四个方法使用顺序的不同，产生的效果是不一样。<!--more--></p>
+
+<h4><a href="">transform()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>transform : none | &lt;transform-function&gt; +
+&lt;transform-function&gt; : rotate() scale() skew() translate()
+transform : translate(50%) rotate(45deg)
+transform : rotate(45deg) translate(50%) 
+</code></pre>
+
+<p><img src="/images/transform_1.png" width="300"> <img src="/images/transform_2.png" width="300"><br/>
+<strong>注意：</strong>改变transform属性值的顺序产生的图像是不一样的。</p>
+
+<h4><a href="">rotate()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>rotate(&lt;angle&gt;)
+transform:rotate(45deg);
+transform:rotate(-60deg);
+</code></pre>
+
+<p>CSS中使用rotate方法来实现对元素的旋转，在参数中加入角度值。<br/>
+<strong>注意：</strong>旋转方式为顺时针旋转。</p>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;</span><span class="nt">C</span><span class="o">&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotate</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);</span><span class="k">font-size</span><span class="o">:</span><span class="m">200px</span><span class="p">;</span><span class="k">line-height</span><span class="o">:</span><span class="m">300px</span><span class="p">;</span><span class="k">text-align</span><span class="o">:</span><span class="k">center</span><span class="p">;}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/rotate.png" width="300"></p>
+
+<h4><a href="">translate()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>translate(&lt;translation-value&gt; [,&lt;translation-value&gt;]?)
+translateX(&lt;translation-value&gt;)
+translateY  (&lt;translation-value&gt;)
+</code></pre>
+
+<p>指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0。</p>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">translate</span><span class="p">(</span><span class="m">50px</span><span class="p">);}</span><span class="c">/*1*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">translate</span><span class="p">(</span><span class="m">50px</span><span class="o">,</span><span class="m">20%</span><span class="p">);}</span><span class="c">/*2*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">translateX</span><span class="p">(</span><span class="m">-50px</span><span class="p">);}</span><span class="c">/*3*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">translateY</span><span class="p">(</span><span class="m">20%</span><span class="p">);}</span><span class="c">/*4*/</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/translate_1.png" width="150"> <img src="/images/translate_2.png" width="150"> <img src="/images/translate_3.png" width="150"> <img src="/images/translate_4.png" width="150"></p>
+
+<h4><a href="">scale()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>scale(&lt;number&gt; [,&lt;number&gt;]?)
+scaleX(&lt;number&gt;)
+scaleY(&lt;number&gt;)
+</code></pre>
+
+<p>指定对象的2D scale（2D缩放）。第一个参数对应X轴，第二个参数对应Y轴。<br/>
+<strong>注意：</strong>如果第二个参数未提供，则默认取第一个参数的值。</p>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">,</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">scaleX</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">scaleY</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/scale_1.png" width="150"> <img src="/images/scale_2.png" width="150"> <img src="/images/scale_3.png" width="150"> <img src="/images/scale_2.png" width="150"></p>
+
+<h4><a href="">skew()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>skew(&lt;angle&gt; [,&lt;angle&gt;]?)
+skewX(&lt;angle&gt;)
+skewY(&lt;angle&gt;)
+</code></pre>
+
+<p>指定对象skew transformation（斜切扭曲）。第一个参数对应X轴，第二个参数对应Y轴。<br/>
+<strong>注意：</strong>如果第二个参数未提供，则默认值为0</p>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">skew</span><span class="p">(</span><span class="m">30</span><span class="n">deg</span><span class="p">);}</span><span class="c">/*1*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">skew</span><span class="p">(</span><span class="m">30</span><span class="n">deg</span><span class="o">,</span><span class="m">30</span><span class="n">deg</span><span class="p">);}</span><span class="c">/*2*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">skewX</span><span class="p">(</span><span class="m">30</span><span class="n">deg</span><span class="p">);}</span><span class="c">/*3*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">skewY</span><span class="p">(</span><span class="m">30</span><span class="n">deg</span><span class="p">);}</span><span class="c">/*4*/</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/skew_1.png" width="150"> <img src="/images/skew_2.png" width="150"> <img src="/images/skew_1.png" width="150"> <img src="/images/skew_3.png" width="150"></p>
+
+<h4><a href="">transform-origin()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>[ &lt;percentage&gt; | &lt;length&gt; | left | center① | right ] [ &lt;percentage&gt; | &lt;length&gt; | top | center② | bottom ]?
+默认值：50% 50%，效果等同于center center
+适用于：所有块级元素及某些内联元素
+继承性：无
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>&lt;percentage&gt;：用百分比指定坐标值。可以为负值。
+&lt;length&gt;：用长度值指定坐标值。可以为负值。
+left：指定原点的横坐标为left
+center①：指定原点的横坐标为center
+right：指定原点的横坐标为right
+top：指定原点的纵坐标为top
+center②：指定原点的纵坐标为center
+bottom：指定原点的纵坐标为bottom
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1. 设置或检索对象以某个原点进行转换。
+2. 该属性提供2个参数值。
+3. 如果提供两个，第一个用于横坐标，第二个用于纵坐标。
+4. 如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotate</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);</span><span class="n">transform</span><span class="o">-</span><span class="n">origin</span><span class="o">:</span><span class="m">0</span> <span class="m">0</span><span class="p">;}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/transform-origin.png" width="300"></p>
+
+<h4><a href="">perspective</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>perspective:none | &lt;length&gt;
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotateY</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/perspective.png" width="300"></p>
+
+<h4><a href="">perspective-origin()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>[ &lt;percentage&gt; | &lt;length&gt; | left | center① | right ] [ &lt;percentage&gt; | &lt;length&gt; | top | center② | bottom ]?
+默认值：50% 50%，效果等同于center center
+</code></pre>
+
+<h4>取值</h4>
+
+<pre><code>&lt;percentage&gt;：用百分比指定坐标值。可以为负值。
+&lt;length&gt;：用长度值指定坐标值。可以为负值。
+left：指定透视点的横坐标为left
+center①：指定透视点的横坐标为center
+right：指定透视点的横坐标为right
+top：指定透视点的纵坐标为top
+center②：指定透视点的纵坐标为center
+bottom：指定透视点的纵坐标为bottom
+</code></pre>
+
+<h4>说明</h4>
+
+<pre><code>1. 该属性提供2个参数值。
+2. 如果提供两个，第一个用于横坐标，第二个用于纵坐标。
+3. 如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;</span><span class="n">perspective</span><span class="o">-</span><span class="n">origin</span><span class="o">:</span><span class="m">0</span> <span class="m">1000px</span><span class="p">;}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotateY</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/perspective-origin.png" width="300"></p>
+
+<h4><a href="">translate3d()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>translate3d(&lt;translation-value&gt;,&lt;translation-value&gt;,&lt;lenght&gt;)
+translateX(&lt;translation-value&gt;)
+translateY(&lt;translation-value&gt;)
+translateZ(&lt;lenght&gt;)
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">translate3d</span><span class="p">(</span><span class="m">10px</span><span class="o">,</span><span class="m">20%</span><span class="o">,</span><span class="m">200px</span><span class="p">);}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/translate3d_1.png" width="300"></p>
+
+<h4><a href="">scale3d()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>scale3d(&lt;number&gt;,&lt;number&gt;,&lt;number&gt;)
+scaleX(&lt;number&gt;)
+scaleY(&lt;number&gt;)
+scaleZ(&lt;number&gt;)
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">scale3d</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="o">,</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="o">,</span><span class="m">1</span><span class="p">);}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/scale3d_1.png" width="300"></p>
+
+<h4><a href="">rotate3d()</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>rotate3d(&lt;number&gt;,&lt;number&gt;,&lt;number&gt;,&lt;angle&gt;)
+rotateX(&lt;angle&gt;)
+rotateY(&lt;angle&gt;)
+rotateZ(&lt;angle&gt;)
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotate3d</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">1</span><span class="o">,</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotate3d</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">1</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotate3d</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">1</span><span class="o">,</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span> <span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotate3d</span><span class="p">(</span><span class="m">1</span><span class="o">,</span><span class="m">1</span><span class="o">,</span><span class="m">1</span><span class="o">,</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/rotate3d_1.png" width="300"></p>
+
+<h4><a href="">transform-style</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>transform-style : flat | preserve-3d
+flat : 扁平效果
+preserve-3d : 保留3d效果
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-1&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>          <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nc">.m-demo</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;}</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span><span class="o">&gt;</span><span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotateX</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);</span><span class="n">transform</span><span class="o">-</span><span class="n">style</span><span class="o">:</span><span class="n">preserve</span><span class="m">-3</span><span class="n">d</span><span class="p">;}</span><span class="c">/*内部保留3d效果需要设置preserve-3d*/</span>
+</span><span class='line'>  <span class="nc">.m-demo-1</span><span class="o">&gt;</span><span class="nt">pre</span><span class="o">&gt;</span><span class="nt">pre</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotateY</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/preserver_1.png" width="300"> &nbsp;to&nbsp; <img src="/images/preserver.png" width="300"></p>
+
+<h4><a href="">backface-visibility</a></h4>
+
+<h4>语法</h4>
+
+<pre><code>backface-visibility : visible | hidden
+背面设置可见或者不可见
+</code></pre>
+
+<h4>demo</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-2&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'>            <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;</span><span class="nt">C</span><span class="o">&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>            <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;</span><span class="nt">E</span><span class="o">&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;m-demo m-demo-2 m-demo-backface&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'>            <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;</span><span class="nt">C</span><span class="o">&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>            <span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;</span><span class="nt">E</span><span class="o">&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="nc">.m-demo</span><span class="p">{</span><span class="n">perspective</span><span class="o">:</span><span class="m">2000px</span><span class="p">;}</span>
+</span><span class='line'>    <span class="nc">.m-demo</span> <span class="o">&gt;</span> <span class="nt">div</span><span class="p">{</span><span class="n">transform</span><span class="o">-</span><span class="n">style</span><span class="o">:</span><span class="n">preserve</span><span class="m">-3</span><span class="n">d</span><span class="p">;</span><span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span><span class="k">top</span><span class="o">:</span><span class="m">0</span><span class="p">;</span><span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span><span class="k">width</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span><span class="k">height</span><span class="o">:</span><span class="m">100%</span><span class="p">;}</span>
+</span><span class='line'>    <span class="nc">.m-demo</span> <span class="nt">pre</span><span class="p">{</span><span class="k">font-size</span><span class="o">:</span><span class="m">200px</span><span class="p">;</span><span class="k">text-align</span><span class="o">:</span><span class="k">center</span><span class="p">;}</span>
+</span><span class='line'>    <span class="nc">.m-demo</span> <span class="nt">pre</span><span class="nd">:first-child</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotateY</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">1px</span><span class="p">);}</span>
+</span><span class='line'>    <span class="nc">.m-demo</span> <span class="nt">pre</span><span class="nd">:last-child</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="k">none</span><span class="p">;}</span>
+</span><span class='line'>    <span class="nc">.m-demo-2</span> <span class="o">&gt;</span> <span class="nt">div</span><span class="p">{</span><span class="n">transform</span><span class="o">:</span><span class="n">rotateY</span><span class="p">(</span><span class="m">45</span><span class="n">deg</span><span class="p">);}</span>
+</span><span class='line'>    <span class="nc">.m-demo-backface</span> <span class="nt">pre</span><span class="p">{</span><span class="n">backface</span><span class="o">-</span><span class="k">visibility</span><span class="o">:</span><span class="k">hidden</span><span class="p">;}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/backface_1.png" width="300"> &nbsp;to&nbsp; <img src="/images/backface_2.png" width="300"></p>
+</div>
+
+<br/><br/><br/>
+	
+		<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_linkedin">LinkedIn</a>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_tianya">天涯社区</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_fb">Facebook</a>
+
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	shortUrl:false,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+	
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2016/01/10/csstransition" data-title="前端开发之CSS变形" data-url="http://mmyton.github.io/blog/2016/01/10/csstransition/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"mmyton"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+
+
+				</div>
+
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    Mmyton
+
+
+Design credit: <a href="http://www.mmyton.com">Mmyton</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

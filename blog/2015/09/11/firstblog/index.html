@@ -1,0 +1,360 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Octopress搭建静态博客网站 - My Octopress Blog</title>
+	<meta name="author" content="Mmyton">
+
+	
+	<meta name="description" content="Octopress搭建静态博客网站">
+	<meta name="keywords" content="seo, octopress, analytics, 博客搭建">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://mmyton.github.io/blog/2015/09/11/firstblog/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+  function addBlankTargetForLinks () {
+    $('a[href^="http"]').each(function(){
+      $(this).attr('target', '_blank');
+    });
+  }
+  $(document).bind('DOMNodeInserted', function(event) {
+    addBlankTargetForLinks();
+  });
+</script>
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<!-- 
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='/images/mmyton.jpg' alt='Profile Picture' style='width: 160px;height:160px;' />");
+		});
+	</script>
+	 -->
+	<img src='/images/mmyton.jpg' alt='Profile Picture' style='width: 160px;height:160px;' />
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/">Blog</a></li>
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/about">About</a></li>
+    <li style="display:inline-block;text-align:center;width:50px"><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:449166183@qq.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/Mmyton" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<div id="respWidth"><section>
+  <h1>Categories</h1>
+  <ul id="categories" style="list-style:none;">
+    <li class='category'><a href='/blog/categories/css/'>css (4)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (3)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/ps/'>ps (1)</a></li>
+
+  </ul>
+</section></div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Octopress搭建静态博客网站</h1>
+	<div class="entry-content" itemprop="articleBody"><h3>导语</h3>
+
+<blockquote><p><a href="http://octopress.org/">Octopress</a>是一个基于 Jekyll 的静态博客站点生成系统，它很大程度上简化了用 Jekyll 搭建博客的过程。</p></blockquote>
+
+<h3>一、<a href="http://octopress.org/">Octopress</a>的优势</h3>
+
+<p>命令行操作 纯文本写 博客定制性高 纯静态 版本化管理 迁移成本低 简洁的Ruby框架 <a href="http://www.markdown.cn/#overview">Markdown</a>语法</p>
+
+<!-- more -->
+
+
+<p></p>
+
+<h3>二、搭建<a href="http://octopress.org/">Octopress</a>博客需要了解的知识</h3>
+
+<ul>
+<li><a href="http://www.Mmyton.com">Ruby</a>(其实会几个命令即可，后续会讲到)</li>
+<li><a href="http://www.markdown.cn/#overview">Markdown</a>语法</li>
+<li><a href="http://www.github.com/">Github</a>(部署博客用，会简单使用即可）</li>
+<li><a href="http://www.Mmyton.com">Git</a>(会一些简单的Git命令)</li>
+</ul>
+
+
+<h3>三、准备工作</h3>
+
+<p>系统：本机系统是window8 64位，window7以上均可。下载以下软件<br/>
+<a href="http://pan.baidu.com/s/1hrxiHdM">Git</a> &nbsp;&nbsp;&nbsp;<a href="http://pan.baidu.com/s/1skr0Ewl">Ruby</a>&nbsp;&nbsp;&nbsp;<a href="http://pan.baidu.com/s/1sjSymqL">DevKit</a>&nbsp;&nbsp;&nbsp;<a href="http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi">Python</a>&nbsp;&nbsp;&nbsp;<a href="http://pan.baidu.com/s/1ZExrw">Awesomium</a>&nbsp;&nbsp;&nbsp;<a href="http://pan.baidu.com/s/1skjZdPr">Markdownpad</a></p>
+
+<ul>
+<li>Git:版本管理工具，将代码托管到GitHub</li>
+<li>Ruby+DevKit：生成静态网页</li>
+<li>MarkdownPad：Window下Markdown语法编辑器</li>
+<li>Awesomium：实现MarkdownPad实时预览功能</li>
+</ul>
+
+
+<h3>四、配置环境</h3>
+
+<h4>1.安装Git<br/></h4>
+
+<p>  window下安装<a href="http://pan.baidu.com/s/1hrxiHdM">Git</a>很简单，跟安装软件一样，一路next即可。安装好后在桌面点击右键,右键菜单中将包括以下几个选项：<br/>
+  <img src="/images/1.jpg" width="150" height="150"><br/>
+  在进行接下去的配置之前，需要一个<a href="http://www.github.com/">Github</a>账号，到相应的官网申请个<a href="http://www.github.com/">Github</a>账号即可，记得验证注册时所用的邮箱。
+  完成注册后，开始配置<a href="http://pan.baidu.com/s/1hrxiHdM">Git</a>全局用户信息。单击桌面右键，在右键菜单中选择Git Bash。此时将跳出如下页面：<br/>
+  <img src="/images/7.jpg" width="300" height="400"><br/>
+  在Git Bash中输入如下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git config --global user.name "这里是你的Github账号" </span></code></pre></td></tr></table></div></figure>
+
+
+<p> <br/>
+  按回车结束，接着继续输入：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  git config --global user.email "这里是你的注册邮箱" </span></code></pre></td></tr></table></div></figure>
+
+
+<p> <br/>
+  同样按回车结束，接下开始设置与<a href="http://www.github.com/">Github</a>进行数据交互的密钥(默认保存在C:\Users\Mmyton.ssh下，其中Mmyton是我们本机的用户名)，在Git Bash输入如下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ssh-keygen -t rsa -C "这里是你的注册邮箱"   </span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+  一直按回车直到结束即可（如果你是第一次输入上面这个命令，则在没输入命令之前，你在C:\Users\Mmyton下看不到.ssh文件夹），此时找到我们生成的密钥：<br/>
+  <img src="/images/8.jpg" width="300" height="400"><br/>
+  打开id_rsa.pub,全选复制。浏览器打开你的<a href="http://www.github.com/">Github</a>账号：点击右上角的头像：<br/>
+  <img src="/images/9.png" width="100" height="100"> <img src="/images/10.jpg" width="400" height="400">  <br/>
+  点击Add key即可。然后回到Git Bash验证我们的设置是否可行，输入如下命令,回车：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ssh -T git@github.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p> <br/>
+<img src="/images/11.jpg" width="500" height="500"><br/>
+  如果出现以上画面，恭喜配置正确。</p>
+
+<h4>2.安装Ruby<br/></h4>
+
+<p>  <a href="http://pan.baidu.com/s/1skr0Ewl">Ruby</a>的安装也是一路next，不过有一个地方需要注意下：<br/>
+  <img src="/images/6.jpg" width="300" height="400"></p>
+
+<h4>3.解压DevKit</h4>
+
+<p>  解压<a href="http://pan.baidu.com/s/1sjSymqL">DevKit</a>到和<a href="http://pan.baidu.com/s/1skr0Ewl">Ruby</a>安装的同一盘下，如c盘，把安装路径改为C:\DevKit,然后解压即可，解压完后（为了把<a href="http://pan.baidu.com/s/1skr0Ewl">Ruby</a>和<a href="http://pan.baidu.com/s/1sjSymqL">DevKit</a>关联起来）进入到Devkit目录下，右键单击空白处，选择Git Bash，输入如下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby dk.rb init</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+  回车，接着继续输入：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby dk.rb install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+<img src="/images/12.jpg" width="500" height="500"><br/>
+出现如上画面表示配置成功。</p>
+
+<h4>4.安装Octopress以及安装依赖项</h4>
+
+<p>在桌面上单击右键选择Git Bash，输入如下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+然后继续输入命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+由于国内网的问题，这个安装命令一般都会出错，所以我需要修改软件源，淘宝提供了很方便的软件源，只需按照如下命令修改默认软件源并移除之前的软件源即可：<br/>
+添加软件源</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem sources -a http://ruby.taobao.org</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+移除软件源</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem sources -r http://rubygems.org</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+接着修改<a href="http://octopress.org/">Octopress</a>下的Gemfile文件：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source "https://rubygems.org"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+修改为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source "https://ruby.taobao.org"(网上其他的攻略写的软件源有误)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+保存即可接着就可以安装bundler和bundler中的软件包</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install    </span></code></pre></td></tr></table></div></figure>
+
+
+<p>现在终于可以安装<a href="http://octopress.org/">Octopress</a>的默认主题：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>5.生成并预览<a href="http://octopress.org/">Octopress</a>博客</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>浏览器输入<a href="http://localhost:4000">http://localhost:4000</a>    即可看到如下画面：<br/>
+<img src="/images/2.png" width="500" height="500"></p>
+</div>
+
+<br/><br/><br/>
+	
+		<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_linkedin">LinkedIn</a>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_tianya">天涯社区</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_fb">Facebook</a>
+
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	shortUrl:false,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+	
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2015/09/11/firstblog" data-title="Octopress搭建静态博客网站" data-url="http://mmyton.github.io/blog/2015/09/11/firstblog/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"mmyton"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+
+
+				</div>
+
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    Mmyton
+
+
+Design credit: <a href="http://www.mmyton.com">Mmyton</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
