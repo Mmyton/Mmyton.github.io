@@ -25,7 +25,7 @@
     <lastmod>2016-01-06T10:00:59+08:00</lastmod>
   </url>
   <url>
-    <loc>http://mmyton.github.io/blog/2016/01/05/wangyifirst/</loc>
+    <loc>http://mmyton.github.io/blog/2016/01/05/webps/</loc>
     <lastmod>2016-01-05T09:43:38+08:00</lastmod>
   </url>
   <url>
@@ -52,5 +52,11 @@
   </url>
   <url>
     <loc>http://mmyton.github.io/blog/categories/html/</loc>
+  </url>
+  <url>
+    <loc>http://mmyton.github.io/2/</loc>
+  </url>
+  <url>
+    <loc>http://mmyton.github.io/3/</loc>
   </url>
 </urlset>
